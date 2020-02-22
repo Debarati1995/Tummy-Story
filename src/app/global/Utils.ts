@@ -1,6 +1,14 @@
 
 export default class Utils {
-    static sortArray(array, nestedProp, sortBy, isAsc) {
+
+    /**
+     * This function sorts items of an array based on a property value passed to it
+     * @param array
+     * @param nestedProp
+     * @param sortBy
+     * @param isAsc
+     */
+    static sortArray(array: any, nestedProp: any, sortBy: any, isAsc: boolean) {
         array.sort((a, b) => {
             let val1;
             let val2;
