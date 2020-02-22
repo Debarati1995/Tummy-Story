@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
-import { UserLocationComponent } from './user-location/user-location.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 
@@ -17,7 +16,6 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     RestaurantListComponent,
     RestaurantDetailsComponent,
-    UserLocationComponent,
     SearchComponent
   ],
   imports: [

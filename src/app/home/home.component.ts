@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Function to get list of restaurant list according to search input given by user
   getRestaurantList(searchObj) {
     const sortBy = 'rating';
     const sortOrder = 'desc';
@@ -37,16 +38,12 @@ export class HomeComponent implements OnInit {
     const url = ApiSettings.restaurantList + '?' + urlParams + '&sort=' + sortBy + '&order=' + sortOrder;
     this.service.getServiceData(url).then((res: any) => {
       if (res) {
-        console.log(res);
         this.restaurantList = res.restaurants;
       }
     });
   }
 
-  onOpeningDetails(val) {
-    this.showList = val;
-  }
-
+  // Function to receive current location's geoCode object
   getGeoCodeDetails(obj) {
     this.getSelectedLocation(obj.location);
     this.geoCodeObj = obj;
@@ -54,6 +51,7 @@ export class HomeComponent implements OnInit {
     this.restaurantList = obj.nearby_restaurants;
   }
 
+  // Function to set current location
   getSelectedLocation(userLocation) {
     this.latitude = userLocation.latitude;
     this.longitude = userLocation.longitude;

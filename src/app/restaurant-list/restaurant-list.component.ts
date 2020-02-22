@@ -8,10 +8,8 @@ import { Router } from '@angular/router';
 })
 export class RestaurantListComponent implements OnInit {
   @Input() dataList = [];
-  @Output() openDetailsEvent: EventEmitter<any>;
 
   constructor(private router: Router) {
-    this.openDetailsEvent = new EventEmitter<any>();
   }
 
   ngOnInit() {

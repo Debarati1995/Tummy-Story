@@ -28,6 +28,7 @@ export class RestaurantDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Function to get details of selected restaurant
   getRestaurantDetails() {
     const url = ApiSettings.restaurantDetails + '?res_id=' + this.selectedId;
     this.service.getServiceData(url).then((res: any) => {
@@ -35,6 +36,7 @@ export class RestaurantDetailsComponent implements OnInit {
     });
   }
 
+  // Function to navigate to home page
   backToList() {
     this.router.navigate(['/home']);
   }
