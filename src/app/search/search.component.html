@@ -1,0 +1,25 @@
+<div class="d-flex">
+  <div class="input-group mb-3 col-5">
+    <div class="input-group">
+      <input type="text" class="form-control" [(ngModel)]="locationText" (ngModelChange)="getSearchResults('location')"
+        placeholder="Delivery Location" aria-label="Delivery Location" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-success" type="submit" (click)="getCurrentLocation()">Get Current Location</button>
+      </div>
+    </div>
+    <div class="w-100 border" *ngIf="locationText?.length && suggestedLocations?.length">
+      <ul class="list-unstyled">
+        <li class="btn pl-2 pt-2" *ngFor="let item of suggestedLocations">
+          <div (click)="selectArea(item)" class="w-100">
+            {{item.title}}
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="md-form active-purple active-purple-2 mb-3 col-7">
+    <input class="form-control" type="text" [(ngModel)]="searchText" (ngModelChange)="getSearchResults()"
+      placeholder="Search Restaurant" aria-label="Search Restaurant">
+  </div>
+</div>

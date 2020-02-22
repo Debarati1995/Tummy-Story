@@ -1,0 +1,17 @@
+<!-- container holding location and name search area -->
+<div class="shadow p-3 mb-5 bg-dark text-white header">
+
+  <div class="text-left pt-3 mb-4 ml-3">
+    <h2 class="logo">Tummy Story</h2>
+  </div>
+
+  <div class="w-100">
+    <!-- Component to add delivery-location and search restaurants -->
+    <app-search (geoCodeEvent)="getGeoCodeDetails($event)" (searchEvent)="getRestaurantList($event)"></app-search>
+  </div>
+
+</div>
+
+<!-- Component to display the list of near-by restaurants -->
+<app-restaurant-list [dataList]="restaurantList" (openDetailsEvent)="onOpeningDetails($event)">
+</app-restaurant-list>

@@ -1,0 +1,19 @@
+<!-- section to display restaurant list -->
+<div class="col ">
+  <ul class="list-group list-group-flush mx-auto justify-content-center">
+    <li class="list-group-item" *ngFor="let data of dataList">
+      <h4>
+
+        <a class="text-dark" [routerLink]="['restaurant-details/'+data.restaurant.id+'/'+data.restaurant.name]">
+          {{ data.restaurant.name }}
+        </a>
+        <span class="badge badge-success float-right"> {{ data.restaurant.user_rating.aggregate_rating }}
+        </span>
+        <p class="mb-0 col-10">
+          <small class="text-muted"> {{data.restaurant.location.address}} </small>
+        </p>
+
+      </h4>
+    </li>
+  </ul>
+</div>

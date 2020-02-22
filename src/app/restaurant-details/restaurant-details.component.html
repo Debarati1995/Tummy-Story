@@ -1,0 +1,29 @@
+<!-- button to go back to the list -->
+<div class="shadow p-3 bg-dark text-white header">
+  <button type="button" class="btn" (click)="backToList()">Go Back To The List</button>
+</div>
+
+<!-- section to show restaurant details -->
+<section *ngIf="restaurantDetail" class="container-fluid p-5">
+  <h3> {{restaurantDetail?.name}}
+    <span class="float-right">
+      <span class="badge badge-success text-white">
+        {{restaurantDetail.user_rating.aggregate_rating}}
+      </span>
+      <small class="text-muted">
+        ({{restaurantDetail.all_reviews_count}} Reviews)
+      </small>
+    </span>
+  </h3>
+  <p class="mb-1">{{restaurantDetail.establishment[0]}} - {{restaurantDetail?.cuisines}}</p>
+  <p class="mb-1">Timing : {{restaurantDetail?.timings}} </p>
+  <p class="mb-1">Average cost for two : {{restaurantDetail.currency}} {{restaurantDetail.average_cost_for_two}}
+    (approx.)</p>
+  <p class="mt-2">
+    <span class="text-muted border rounded mr-2 px-2" *ngFor="let info of restaurantDetail.highlights">{{info}}</span>
+    <span class="float-right">Call : {{restaurantDetail.phone_numbers}} </span>
+  </p>
+  <p>
+    <a class="font-bold btn btn-outline-dark" [attr.href]="restaurantDetail?.menu_url" target="_blank">Open Menu</a>
+  </p>
+</section>
